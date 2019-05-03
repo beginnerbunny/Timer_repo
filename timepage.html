@@ -1,29 +1,29 @@
 <html>
-<head>
-<link rel='stylesheet' href='./timepage.css'>	
-<script src="time.js"></script>
-</head>
-<body>
-<div class='main'>
-	<div class='settime'>
-		<div class='indsettime' id="min">00</div>
-		<button class="setbutton" onclick="minCounterUp()">Up</button>
-		<button class="setbutton" onclick="minCounterDown()">Down</button>
-		<div class='indsettime' id="sec">00</div>
-		<button class="setbutton" onclick="secCounterUp()">Second-Up</button>
-		<!-- <input type="button" name="secdown" value="Down" class="setbutton"> -->
-		<button class="setbutton" onclick="secCounterDown()">Second-Down</button>
-    </div>
+  <head>
+    <link rel="stylesheet" href="./timepage.css" />
+    <script src="time.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="settime">
+        <div class="indsettime" id="min">00</div>
+        <button class="setbutton" onclick="minCounterUp()">Min-Up</button>
+        <button class="setbutton" onclick="minCounterDown()">Min-Down</button>
+        <div class="indsettime" id="sec">00</div>
+        <button class="setbutton" onclick="secCounterUp()">Sec-Up</button>
+        <!-- <input type="button" name="secdown" value="Down" class="setbutton"> -->
+        <button class="setbutton" onclick="secCounterDown()">
+          Sec-Down
+        </button>
+      </div>
 
-    <div class="disptime">
-    
-    	<!-- <div id='min'></div>
+      <div class="disptime">
+        <!-- <div id='min'></div>
 			<div id="sec"></div> -->
-			<button id="submit" class="cbutton" onclick="timer()">Start</button>
-			<button id="stop" class="cbutton" onclick="stop()">Stop</button>
-			<button id="reset" class="cbutton" onclick="reset()">Reset</button>
+        <button id="submit" class="cbutton" onclick="timer()">Start</button>
+        <button id="stop" class="cbutton" onclick="stop()">Stop</button>
+        <button id="reset" class="cbutton" onclick="reset()">Reset</button>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>

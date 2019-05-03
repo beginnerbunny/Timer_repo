@@ -1,74 +1,74 @@
-*{
-	display: flex;
-	font-family: sans-serif;
+* {
+  display: flex;
+  font-family: sans-serif;
 }
 
-.main{
-	text-align: center;
-	background-color: #D3D3D3;
-	margin:100px 200px;
-	height:400px;
-	width: 800px;
-	align-content:center; 
-	flex-wrap:wrap;
-	border-radius: 15px; 
+body {
+  background-color: rgb(18, 34, 51);
 }
 
-.settime{
-
-	margin:10px;
-	position:relative;
-	background-color: teal;
-	height:120px;
-	width:750px; 
-	justify-content: space-around;
-	padding:10px;
-	border-radius: 15px; 
+.main {
+  text-align: center;
+  background-color: #d3d3d3;
+  margin: 100px 200px;
+  height: 400px;
+  width: 800px;
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 15px;
 }
 
-.indsettime{
-	font-size: 36px;
-	text-align: center;
-	vertical-align: center;
-	position: relative;
-	top:10px;
-	left:10px;
-	display: inline-block;
-	border-style: solid;
-	border-width:1px;
-	height:90px;
-	width: 90px;
-	margin:10px ;
-	background-color: white;
-
+.settime {
+  margin: 10px;
+  position: relative;
+  background-color: teal;
+  height: 120px;
+  width: 750px;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 15px;
 }
 
-.setbutton{
-	position: relative;
-	top: 40px;
-	left: 10px;
-	height:20px;
-	
+.indsettime {
+  font-size: 36px;
+  text-align: center;
+  vertical-align: center;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  height: 90px;
+  width: 90px;
+  margin: 10px;
+  background-color: white;
 }
 
-.disptime{
-	align-items: center;
-	position: relative;
-	top:0px;
-	bottom:10px;
-	margin:10px;
-	height:220px;
-	width:100%;
-	background-color: grey;
-	display:inline-block;
-	justify-content: space-around;
-	border-radius: 15px; 
-
+.setbutton {
+  position: relative;
+  top: 40px;
+  left: 10px;
+  height: 20px;
 }
 
-.cbutton{
-	position: relative;
-	top:40px;
-	left:0px;
-	display: inline-block;
+.disptime {
+  align-items: center;
+  position: relative;
+  top: 0px;
+  bottom: 10px;
+  margin: 10px;
+  height: 220px;
+  width: 100%;
+  background-color: grey;
+  display: inline-block;
+  justify-content: space-around;
+  border-radius: 15px;
+}
+
+.cbutton {
+  position: relative;
+  top: 40px;
+  left: 0px;
+  display: inline-block;
 }
