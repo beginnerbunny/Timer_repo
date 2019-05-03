@@ -91,11 +91,14 @@ function timer() {
 
     x = setInterval(function() {
       
-    if (totalCount <= 5) {
-      
+    if (totalCount <= 5) { 
       document.getElementById('min').style.color='red';
       document.getElementById('sec').style.color='red';
       
+      for(var i = 900; i < 4500; i = i + 900){
+        setTimeout("hide()", i);
+        setTimeout("show()", i+450);
+      }
       if(totalCount<=0){
         document.getElementById('hidden-text').innerHTML="Winter is Here";
         clearInterval(x);
@@ -124,6 +127,20 @@ function timer() {
     else {
     }
   }, 1000);
+}
+
+function show(){
+  if(document.getElementById)
+  document.getElementById("sec").style.visibility = "visible";
+  if(document.getElementById)
+  document.getElementById("min").style.visibility = "visible";
+}
+
+function hide(){
+  if(document.getElementById)
+  document.getElementById("sec").style.visibility = "hidden";
+  if(document.getElementById)
+  document.getElementById("min").style.visibility = "hidden";
 }
 
 function reset() {
