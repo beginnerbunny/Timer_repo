@@ -3,81 +3,7 @@ var x = 0;
 var sec=0;
 var min=0;
 var totalCount=0;
-function secCounterUp() {
-readelements();
-  sec++;
-  if (sec < 10) {
-    sec = "0" + sec;
-  }
-  if (sec > 59) {
-    ++min;
-    resetSec();
-    if (min > 59) {
-      //If timer set up for more than 59:59, timer limit reached
-      reset();
-      return;
-    }
-  }
-  if (min < 10) {
-    min = "0" + min;
-  }
-  assignValues(min, sec);
-}
 
-//Function call to decrement seconds
-function secCounterDown() {
-readelements();
-  sec--;
-  // console.log(sec);
-  if (sec < 0) {
-    sec = 59;
-    if (min <= 0) {
-      min = 0;
-    } 
-    else {
-      //min--;
-    }
-  }
-  if (sec < 10) {
-    sec = "0" + sec;
-  }
-  if (min < 10) {
-    min = "0" + min;
-  }
-  assignelements();
-}
-
-//Function call to increment minutes
-function minCounterUp() {
- readelements();
-  min++;
-
-  if (min < 10) {
-    min = "0" + min;
-  }
-  document.getElementById("min").value = min;
-}
-
-//Function call to decrement minutes
-function minCounterDown() {
- readelements();
-  if (min <= 0) {
-    if (sec < 0) {
-      reset();
-      return;
-    } 
-    else {
-      //DO NOTHING
-    }
-  } 
-  else {
-    min--;
-  }
-  if (min < 10) {
-    min = "0" + min;
-  }
-  document.getElementById("min").value = min;
-}
 
 //Function call to implement timer
 function timer() {
@@ -91,7 +17,8 @@ function timer() {
 
     x = setInterval(function() {
       
-    if (totalCount <= 5) { 
+    if (totalCount <= 5) {
+      
       document.getElementById('min').style.color='red';
       document.getElementById('sec').style.color='red';
       
