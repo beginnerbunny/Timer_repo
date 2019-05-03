@@ -1,32 +1,42 @@
 <html>
   <head>
     <link rel="stylesheet" href="./timepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Teko"
+      rel="stylesheet"
+    />
     <script src="time.js"></script>
   </head>
   <body>
     <div class="main">
-      <div class="settime">
-        <div >
-          <input id="min" type="number" name="minutes" value="00" class="indsettime">
+      <div class="outer-body">
+        <div class="inner-body">
+          <div class="timer-body">
+            <div id="min" class="numbers">00</div>
+            <p class="time">Minutes</p>
+          </div>
+          <div class="timer-body">
+            <div id="sec" class="numbers">00</div>
+            <p class="time">Seconds</p>
+          </div>
         </div>
-
-        <button class="setbutton" onclick="minCounterUp()">Min-Up</button>
-        <button class="setbutton" onclick="minCounterDown()">Min-Down</button>
-
-        <div >
-          <input id="sec" type ="number" name="seconds" value="00" class="indsettime">
-        </div>
-
-        <button class="setbutton" onclick="secCounterUp()">Sec-Up</button>
-        <button class="setbutton" onclick="secCounterDown()">Sec-Down</button>
       </div>
-
-      <div class="disptime">
+    </div>
+    <div class="button-section">
+      <div class="control">
         <button id="submit" class="cbutton" onclick="timer()">Start</button>
         <button id="stop" class="cbutton" onclick="stop()">Stop</button>
         <button id="reset" class="cbutton" onclick="reset()">Reset</button>
-        <div id='timeup'></div>
       </div>
     </div>
+    <div class="button-section">
+      <!-- <div class="buttons">
+      <button onclick="minCounterUp()">Min-Up</button>
+      <button onclick="minCounterDown()">Min-Down</button>
+      <button onclick="secCounterUp()">Sec-Up</button>
+      <button onclick="secCounterDown()">Sec-Down</button>
+		</div> -->
+    </div>
+    <div class="hidden-text">TIME OVER</div>
   </body>
 </html>
