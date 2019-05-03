@@ -1,17 +1,88 @@
 //Function call to increment seconds
 var x = 0;
-var sec=0;
-var min=0;
-var totalCount=0;
+var sec = 0;
+var min = 0;
+var totalCount = 0;
+function secCounterUp() {
+  readelements();
+  sec++;
+  if (sec < 10) {
+    sec = "0" + sec;
+  }
+  if (sec > 59) {
+    ++min;
+    resetSec();
+    if (min > 59) {
+      //If timer set up for more than 59:59, timer limit reached
+      reset();
+      return;
+    }
+  }
+  if (min < 10) {
+    min = "0" + min;
+  }
+  assignValues(min, sec);
+}
 
+//Function call to decrement seconds
+function secCounterDown() {
+  readelements();
+  sec--;
+  // console.log(sec);
+  if (sec < 0) {
+    sec = 59;
+    if (min <= 0) {
+      min = 0;
+    } else {
+      //min--;
+    }
+  }
+  if (sec < 10) {
+    sec = "0" + sec;
+  }
+  if (min < 10) {
+    min = "0" + min;
+  }
+  assignelements();
+}
+
+//Function call to increment minutes
+function minCounterUp() {
+  readelements();
+  min++;
+
+  if (min < 10) {
+    min = "0" + min;
+  }
+  document.getElementById("min").value = min;
+}
+
+//Function call to decrement minutes
+function minCounterDown() {
+  readelements();
+  if (min <= 0) {
+    if (sec < 0) {
+      reset();
+      return;
+    } else {
+      //DO NOTHING
+    }
+  } else {
+    min--;
+  }
+  if (min < 10) {
+    min = "0" + min;
+  }
+  document.getElementById("min").value = min;
+}
 
 //Function call to implement timer
 function timer() {
   readelements();
   totalCount = min * 60 + sec;
-  if(sec>59){
-    min+=parseInt(sec/60);
-    sec=sec%60;
+  if (sec > 59) {
+    min += parseInt(sec / 60);
+    sec = sec % 60;
     assignelements();
   }
 
@@ -24,10 +95,10 @@ function timer() {
       
       for(var i = 900; i < 4500; i = i + 900){
         setTimeout("hide()", i);
-        setTimeout("show()", i+450);
+        setTimeout("show()", i + 450);
       }
-      if(totalCount<=0){
-        document.getElementById('hidden-text').innerHTML="Winter is Here";
+      if (totalCount <= 0) {
+        document.getElementById("hidden-text").innerHTML = "Winter is Here";
         clearInterval(x);
         return;
       }
@@ -40,45 +111,43 @@ function timer() {
       assignelements();
     }
     if (sec < 10) {
-      sec="0"+sec;
+      sec = "0" + sec;
       assignelements();
     } else {
       assignelements();
     }
 
     if (min < 10) {
-      min=parseInt(document.getElementById('min').value);
-      min="0"+min;
+      min = parseInt(document.getElementById("min").value);
+      min = "0" + min;
       assignelements();
-    } 
-    else {
+    } else {
     }
   }, 1000);
 }
 
-function show(){
-  if(document.getElementById)
-  document.getElementById("sec").style.visibility = "visible";
-  if(document.getElementById)
-  document.getElementById("min").style.visibility = "visible";
+function show() {
+  if (document.getElementById)
+    document.getElementById("sec").style.visibility = "visible";
+  if (document.getElementById)
+    document.getElementById("min").style.visibility = "visible";
 }
 
-function hide(){
-  if(document.getElementById)
-  document.getElementById("sec").style.visibility = "hidden";
-  if(document.getElementById)
-  document.getElementById("min").style.visibility = "hidden";
+function hide() {
+  if (document.getElementById)
+    document.getElementById("sec").style.visibility = "hidden";
+  if (document.getElementById)
+    document.getElementById("min").style.visibility = "hidden";
 }
 
 function reset() {
   resetSec();
   resetMin();
   clearInterval(x);
-  if(totalCount<=5){
-    document.getElementById('min').style.color='white';
-    document.getElementById('sec').style.color='white';
+  if (totalCount <= 5) {
+    document.getElementById("min").style.color = "white";
+    document.getElementById("sec").style.color = "white";
   }
-  document.getElementById('hidden-text').innerHTML=" ";
 }
 
 function resetSec() {
@@ -103,7 +172,7 @@ function readelements() {
   min = parseInt(document.getElementById("min").value);
 }
 
-function assignelements(){
- document.getElementById("min").value = (min);
- document.getElementById("sec").value = (sec);
+function assignelements() {
+  document.getElementById("min").value = min;
+  document.getElementById("sec").value = sec;
 }
