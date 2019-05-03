@@ -86,3 +86,9 @@ body {
   top: 100px;
   left:230px; 
   }
+/* removes the control buttons from the input field */
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; /* Removes leftover margin */
+  }
