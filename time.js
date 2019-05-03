@@ -10,22 +10,17 @@ function secCounterUp() {
   }
   if (sec > 59) {
     ++min;
-    sec = "0" + 0;
+    resetSec();
     if (min > 59) {
       //If timer set up for more than 59:59, timer limit reached
-      min = 0;
-      sec = 0;
-      document.getElementById("min").innerHTML = "0" + min;
-      document.getElementById("sec").innerHTML = "0" + sec;
-      window.alert("Timer Limit Reached");
+      reset();
       return;
     }
   }
   if (min < 10) {
     min = "0" + min;
   }
-  document.getElementById("min").innerHTML = min;
-  document.getElementById("sec").innerHTML = sec;
+  assignValues(min, sec);
 }
 
 //Function call to decrement seconds
@@ -80,10 +75,7 @@ function minCounterDown() {
   var min = parseInt(document.getElementById("min").innerHTML);
   if (min <= 0) {
     if (sec < 0) {
-      min = 0;
-      sec = 0;
-      document.getElementById("min").innerHTML = "0" + min;
-      document.getElementById("sec").innerHTML = "0" + sec;
+      reset();
       return;
     } else {
       //DO NOTHING
@@ -132,13 +124,23 @@ function timer() {
 }
 
 function reset() {
-  min = 0;
-  sec = 0;
-  document.getElementById("min").innerHTML = "0" + min;
-  document.getElementById("sec").innerHTML = "0" + sec;
-  location.reload();
+  resetSec();
+  resetMin();
+}
+
+function resetSec() {
+  document.getElementById("sec").innerHTML = "00";
+}
+
+function resetMin() {
+  document.getElementById("min").innerHTML = "00";
 }
 
 function stop() {
   clearInterval(x);
+}
+
+function assignValues(min, sec) {
+  document.getElementById("min").innerHTML = min;
+  document.getElementById("sec").innerHTML = sec;
 }
