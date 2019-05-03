@@ -10,13 +10,18 @@ readelements();
     sec = "0" + sec;
   }
   if (sec > 59) {
-    //++min;
-    sec = "0" + 0;
+    ++min;
+    resetSec();
+    if (min > 59) {
+      //If timer set up for more than 59:59, timer limit reached
+      reset();
+      return;
+    }
   }
   if (min < 10) {
     min = "0" + min;
   }
-  assignelements();
+  assignValues(min, sec);
 }
 
 //Function call to decrement seconds
@@ -58,9 +63,7 @@ function minCounterDown() {
  readelements();
   if (min <= 0) {
     if (sec < 0) {
-      min = "00";
-      sec = "00";
-      assignelements();
+      reset();
       return;
     } 
     else {
@@ -94,7 +97,7 @@ function timer() {
       document.getElementById('sec').style.color='red';
       
       if(totalCount<=0){
-        document.getElementById('timeup').innerHTML="Time's Up!!";
+        document.getElementById('hidden-text').innerHTML="Winter is Here";
         clearInterval(x);
         return;
       }
@@ -124,28 +127,39 @@ function timer() {
 }
 
 function reset() {
-  min = "00";
-  sec = "00";
-  if(totalCount<=5){
-    document.getElementById('min').style.color='black';
-    document.getElementById('sec').style.color='black';
-  }
-  document.getElementById('timeup').innerHTML=" ";
-  assignelements();
+  resetSec();
+  resetMin();
   clearInterval(x);
+  if(totalCount<=5){
+    document.getElementById('min').style.color='white';
+    document.getElementById('sec').style.color='white';
+  }
+  document.getElementById('hidden-text').innerHTML=" ";
+}
+
+function resetSec() {
+  document.getElementById("sec").value = "00";
+}
+
+function resetMin() {
+  document.getElementById("min").value = "00";
 }
 
 function stop() {
   clearInterval(x);
 }
 
+function assignValues(min, sec) {
+  document.getElementById("min").innerHTML = min;
+  document.getElementById("sec").innerHTML = sec;
+}
+
 function readelements() {
-   sec = parseInt(document.getElementById("sec").value);
-   min = parseInt(document.getElementById("min").value);
+  sec = parseInt(document.getElementById("sec").value);
+  min = parseInt(document.getElementById("min").value);
 }
 
 function assignelements(){
-  document.getElementById("min").value = (min);
-  document.getElementById("sec").value = (sec);
+ document.getElementById("min").value = (min);
+ document.getElementById("sec").value = (sec);
 }
-

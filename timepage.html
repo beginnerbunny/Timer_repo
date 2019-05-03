@@ -5,6 +5,8 @@
       href="https://fonts.googleapis.com/css?family=Teko"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <script src="time.js"></script>
   </head>
   <body>
@@ -12,11 +14,19 @@
       <div class="outer-body">
         <div class="inner-body">
           <div class="timer-body">
-            <div id="min" class="numbers">00</div>
+            <div>
+              <input type="number" value="00" id="min" class="numbers">
+              </div>
             <p class="time">Minutes</p>
           </div>
           <div class="timer-body">
-            <div id="sec" class="numbers">00</div>
+            <p class="numbers">:</p>
+            <p id="temp">:</p>
+          </div>
+          <div class="timer-body">
+            <div>
+              <input type="number" value="00" id="sec" class="numbers">
+            </div>
             <p class="time">Seconds</p>
           </div>
         </div>
@@ -24,9 +34,15 @@
     </div>
     <div class="button-section">
       <div class="control">
-        <button id="submit" class="cbutton" onclick="timer()">Start</button>
-        <button id="stop" class="cbutton" onclick="stop()">Stop</button>
-        <button id="reset" class="cbutton" onclick="reset()">Reset</button>
+        <button id="submit" onclick="timer()">
+            <i class="fas fa-play"></i>
+        </button>
+        <button id="stop" onclick="stop()">
+            <i class="far fa-stop-circle"></i>
+        </button>
+        <button id="reset" onclick="reset()">
+            <i class="fas fa-redo-alt"></i>
+        </button>
       </div>
     </div>
     <div class="button-section">
@@ -35,8 +51,8 @@
       <button onclick="minCounterDown()">Min-Down</button>
       <button onclick="secCounterUp()">Sec-Up</button>
       <button onclick="secCounterDown()">Sec-Down</button>
-		</div> -->
+    </div> -->
+    <div id="hidden-text"></div>
     </div>
-    <div class="hidden-text">TIME OVER</div>
   </body>
 </html>
